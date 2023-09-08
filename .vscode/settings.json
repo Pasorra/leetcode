@@ -55,6 +55,10 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "queue": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     }
 }
