@@ -18,7 +18,8 @@ public:
     vector<int> inorderTraversal(TreeNode *root)
     {
         vector<int> result;
-        return traverse(root, result);
+        traverse(root, result);
+        return result;
     }
 
     void traverse(TreeNode *root, vector<int> &result)
