@@ -59,6 +59,7 @@
         "deque": "cpp",
         "list": "cpp",
         "xhash": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "algorithm": "cpp"
     }
 }
