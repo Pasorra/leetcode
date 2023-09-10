@@ -60,6 +60,7 @@
         "list": "cpp",
         "xhash": "cpp",
         "xtree": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "unordered_set": "cpp"
     }
 }
