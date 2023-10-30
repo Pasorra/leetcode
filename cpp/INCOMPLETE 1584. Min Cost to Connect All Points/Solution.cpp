@@ -1,5 +1,7 @@
 #include <vector>
 #include <iostream>
+#include <unordered_set>
+#include <sstream>
 using namespace std;
 
 class Solution
@@ -8,41 +10,40 @@ public:
     int minCostConnectPoints(vector<vector<int>> &points)
     {
         int n = points.size();
+        vector<int> visitedMin(n, INT32_MAX);
+        vector<int> visitedPairs(n);
         int result = 0;
-        for (int x = 0; x < n; x++)
+
+        for (int i = 0; i < n; i++)
         {
-            int smallest = INT32_MAX;
-            int smallest_index = 0;
-            for (int y = 0; y < n; y++)
+            int x1 = points[i][0];
+            int y1 = points[i][1];
+            for (int j = i + 1; j < n; j++)
             {
-                if (x == y)
+                int x2 = points[j][0];
+                int y2 = points[j][1];
+                int res = abs(x1 - x2) + abs(y1 - y2);
+                if (res < visitedMin[i])
                 {
-                    continue;
+                    visitedMin[i] = res;
+                    visitedPairs[i] = j;
                 }
-                int res = abs(points[x][0] - points[y][0]) + abs(points[x][1] - points[y][1]);
-                if (res < smallest)
+                if (res < visitedMin[j])
                 {
-                    smallest_index = y;
-                    smallest = res;
+                    visitedMin[j] = res;
+                    visitedPairs[j] = i;
                 }
             }
-            cout << smallest << endl;
-            try
+        }
+        unordered_set<string> set;
+        for (int i = 0; i < n; i++)
+        {
+            cout << i << "->" << visitedPairs[i] << " = " << visitedMin[i] << endl;
+            string s = to_string(min(i, visitedPairs[i])) + to_string(max(i, visitedPairs[i]));
+            if (set.find(s) == set.end())
             {
-                if (points[x][2] == smallest_index)
-                {
-                    continue;
-                }
-                else
-                {
-                    result += smallest;
-                    points[smallest_index][2] = x;
-                }
-            }
-            catch (const std::exception &e)
-            {
-                result += smallest;
-                points[smallest_index][2] = x;
+                set.insert(s);
+                result += visitedMin[i];
             }
         }
         return result;
