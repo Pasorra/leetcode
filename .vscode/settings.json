@@ -63,6 +63,7 @@
         "algorithm": "cpp",
         "unordered_set": "cpp",
         "stack": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "map": "cpp"
     }
 }
