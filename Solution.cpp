@@ -15,7 +15,7 @@ void printVector(const vector<T> &v)
 class Solution
 {
 public:
-    bool boilerplate()
+    int boilerplate()
     {
         return false;
     }
@@ -24,7 +24,7 @@ public:
 int main()
 {
     Solution *s = new Solution();
-    bool res = s->boilerplate();
+    int res = s->boilerplate();
     cout << res << endl;
     return 0;
 }
