@@ -15,16 +15,19 @@ void printVector(const vector<T> &v)
 class Solution
 {
 public:
-    bool boilerplate()
+    vector<string> letterCombinations(string digits)
     {
-        return false;
+        vector<string> res;
+        string letters[] = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     }
 };
 
 int main()
 {
     Solution *s = new Solution();
-    bool res = s->boilerplate();
-    cout << res << endl;
+    vector<int> nums = {0, 0, 0, 0};
+    vector<string> res = s->letterCombinations("2");
+    printVector(res);
+
     return 0;
 }
