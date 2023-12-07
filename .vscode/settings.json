@@ -64,6 +64,9 @@
         "unordered_set": "cpp",
         "stack": "cpp",
         "bitset": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "array": "cpp",
+        "ranges": "cpp",
+        "span": "cpp"
     }
 }

@@ -5,7 +5,7 @@ using namespace std;
 template <typename T>
 void printVector(const vector<T> &v)
 {
-    for (int i = 0; i < v.size() - 1; i++)
+    for (size_t i = 0; i < v.size() - 1; i++)
     {
         cout << v[i] << ", ";
     }
